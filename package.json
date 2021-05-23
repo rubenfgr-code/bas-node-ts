@@ -8,7 +8,7 @@
     "test": "jest",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
     "docker:build": "tsc & docker build -t bas-node-ts . --no-cache & docker images -f dangling=true -q | xargs docker rmi",
-    "docker:run": "docker run -d --name bas-node-ts bas-node-ts",
+    "docker:run": "docker run -d -p 3000:3000 --name bas-node-ts bas-node-ts",
     "docker:rm": "docker rm bas-node-ts --force"
   },
   "author": "Rubén Francisco Gazquez Rosales",
